@@ -66,18 +66,9 @@ public class Enemy extends GameObject{
         return new Rectangle(x, y, 32, 32);
     }
 
-    public String getDirect() {
-        return direct;
-    }
-
-    public void setDirect(String direct) {
-        this.direct = direct;
-    }
-
     private void createHP(Graphics g){
 
         // create enemy HP
-
         g.setColor(Color.gray);
         g.fillRect(x, y - 20, 40, 10);
 

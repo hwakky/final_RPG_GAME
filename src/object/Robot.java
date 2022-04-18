@@ -137,14 +137,6 @@ public class Robot extends GameObject {
         return new Rectangle(x, y, 32, 32);
     }
 
-    public String getDirect() {
-        return direct;
-    }
-
-    public void setDirect(String direct) {
-        this.direct = direct;
-    }
-
     public void sendMSG(String msg) {
         try {
             bufferedWriter.write(String.valueOf(msg));
