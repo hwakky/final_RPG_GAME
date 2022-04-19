@@ -64,7 +64,7 @@ public class ClientHandler implements Runnable {
                         if (clientHandlers.size() == 1) {
 
                             // send bomb to client 1
-                            randElement(160, 40);
+                            randElement(100, 40);
                             broadcastMessage(
                                     "areaPlayer1 BombX :" + String.valueOf(listBombX)
                                     + "ETX :" + String.valueOf(listETX));
@@ -111,7 +111,7 @@ public class ClientHandler implements Runnable {
 
     public void removeClientHandler() {
         clientHandlers.remove(this);
-        System.out.println("SERVER: " + " has some client left the server! ");
+        System.out.println("SERVER: has some client left the server! ");
         System.out.println("----------------------");
         broadcastMessage("SERVER: " + clientUsername + " has left the chat! ");
     }
@@ -147,48 +147,19 @@ public class ClientHandler implements Runnable {
             this.listBombY.append(randBombY).append(",");
 
         }
-
-        randBombX = 0;
-        randBombY = 0;
+        int randEnergyTankX = 0;
+        int randEnergyTankY = 0;
 
         for (int i = 0; i < sizeET; i++) {
 
-            randBombX = getRandomItem(2, 100);
-            randBombY = getRandomItem(2, 80);
+            randEnergyTankX = getRandomItem(2, 100);
+            randEnergyTankY = getRandomItem(2, 80);
 
-            this.listETX.append(randBombX).append(",");
-            this.listETY.append(randBombY).append(",");
+            this.listETX.append(randEnergyTankX).append(",");
+            this.listETY.append(randEnergyTankY).append(",");
 
         }
-
-        System.out.println("listBombX : " + this.listBombX);
-        System.out.println("listBombY : " + this.listBombY);
-        System.out.println("listETX : " + this.listETX);
-        System.out.println("listETY : " + this.listETY);
-
     }
-
-    public void randElement2(ArrayList<ElementPosition> element, int size) {
-
-        int randETX = 0;
-        int randETY = 0;
-
-        if (element.equals(AET)) {
-
-            for (int i = 0; i < size; i++) {
-
-                randETX = getRandomItem(2, 100);
-                randETY = getRandomItem(2, 80);
-
-                this.listETX.append(randETX).append(",");
-                this.listETY.append(randETY).append(",");
-
-            }
-        }
-
-
-    }
-
     private int getRandomItem(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }

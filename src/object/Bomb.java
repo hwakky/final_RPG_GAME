@@ -25,7 +25,6 @@ public class Bomb extends GameObject{
         this.handler = handler;
         this.ABombP = ABombP;
         this.bufferedWriter = bufferedWriter;
-
         try {                
             image = ImageIO.read(new File("../res/object/bomb.png"));
          } catch (IOException ex) {

@@ -104,7 +104,6 @@ public class Game extends Canvas implements Runnable {
 
         translate = new TranslateMessage(handler);
         sendMSG(username + " enter server : " + player1.getPositionX() + " " + player1.getPositionY());
-
     }
 
     // start
@@ -137,7 +136,7 @@ public class Game extends Canvas implements Runnable {
         this.requestFocus();
 
         long lastTime = System.nanoTime();
-        double amountOfTicks = 12;
+        double amountOfTicks = 10;
         double ns = 1000000000 / amountOfTicks;
         double delta = 0;
         long timer = System.currentTimeMillis();
@@ -158,7 +157,7 @@ public class Game extends Canvas implements Runnable {
             frames++;
 
             if (System.currentTimeMillis() - timer > 1000) {
-                timer += 1000;
+                timer += 2000;
                 frames = 0;
             }
         }
@@ -327,7 +326,7 @@ public class Game extends Canvas implements Runnable {
 
     // 
     private void createTileMap() {
-        handler.addObject(new BlockTile(2, 1, tile, ID.Block));
+        handler.addObject(new BlockTile(2, 2, tile, ID.Block));
     }
     // 
     private int getRandomPlayer(int min, int max) {
@@ -374,7 +373,7 @@ public class Game extends Canvas implements Runnable {
                             }
 
                             // check value in bombXP1 and bombYP1
-                            if (bombXP1.size() == 160 && bombYP1.size() == 160) {
+                            if (bombXP1.size() == 100 && bombYP1.size() == 100) {
                                 // create Bomb
                                 for (int i = 0; i < bombXP1.size(); i++) {
                                     BombP1.add(new ElementPosition(bombXP1.get(i), bombYP1.get(i)));
@@ -390,8 +389,6 @@ public class Game extends Canvas implements Runnable {
                                 }
                                 // create ET in map
                                 randElement(AETP1, ID.ET, AETP1.size());
-
-                                // get
                             }
                         }
 
@@ -452,7 +449,7 @@ public class Game extends Canvas implements Runnable {
                             bombYP2 = translate.msgCreateBombYP2(msgFromGroupChat, bombYP2);
 
                             // create bomb and ET
-                            if (bombXP2.size() == 160 && bombYP2.size() == 160) {
+                            if (bombXP2.size() == 100 && bombYP2.size() == 100) {
                                 // create Bomb
                                 for (int i = 0; i < bombXP2.size(); i++) {
                                     BombP2.add(new ElementPosition(bombXP2.get(i), bombYP2.get(i)));

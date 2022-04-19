@@ -9,7 +9,7 @@ public class Server {
     private ServerSocket serverSocket;
 
     public static int countClient = 0;
-    public int n = 1;
+    public static int n =1;
     public Server(ServerSocket serverSocket) {
         this.serverSocket = serverSocket;
     }
@@ -23,7 +23,7 @@ public class Server {
 
                 Socket socket = serverSocket.accept();
 
-                System.out.print("player "+n+" connect");
+                System.out.print("player "+n+" connect ");
                 n++;
                 ClientHandler clientHandler = new ClientHandler(socket);
 

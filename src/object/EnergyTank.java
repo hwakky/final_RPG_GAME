@@ -75,7 +75,7 @@ public class EnergyTank extends GameObject {
     public Rectangle getBounds() {
         return new Rectangle(x, y, 32, 32);
     }
-
+    //random fuel
     public int getRandom(int[] array) {
         int rnd = new Random().nextInt(array.length);
         return array[rnd];

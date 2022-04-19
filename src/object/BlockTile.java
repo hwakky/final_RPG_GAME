@@ -21,7 +21,7 @@ public class BlockTile extends GameObject{
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(image, x * Game.BOX_SIZE, y * Game.BOX_SIZE, Game.BOX_SIZE * 100, Game.BOX_SIZE * 81 , null);
+        g.drawImage(image, x * Game.BOX_SIZE, y * Game.BOX_SIZE, Game.BOX_SIZE * 100, Game.BOX_SIZE * 80 , null);
     }
 
     @Override
