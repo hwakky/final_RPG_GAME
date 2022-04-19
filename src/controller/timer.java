@@ -15,8 +15,8 @@ public class timer implements Runnable{
     @Override
     public void run() {
 
-        for (int j = 0; j < 3; j++) {
-            for (int i = 0; i < 60; i++) {  // 1 second
+        for (int j = 0; j < 1; j++) {
+            for (int i = 0; i < 60; i++) {  
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
