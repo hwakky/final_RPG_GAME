@@ -112,6 +112,11 @@ public class Robot extends GameObject {
                         }
                     }
                 }
+                if (getBounds().intersects(tempObject.getBounds())) {
+                    if (tempObject.getId() == ID.BulletEnemy) {
+                        handler.removeObject(tempObject);
+                    }
+                }
             }
         }
 
